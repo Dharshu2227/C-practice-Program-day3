@@ -1,0 +1,22 @@
+#include <stdio.h>
+int reverseNumber(int num, int rev)
+{
+    if (num == 0)
+        return rev;
+    rev = rev * 10 + (num % 10);
+    return reverseNumber(num / 10, rev);
+}
+int main()
+{
+    int num, reversed;
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+    reversed = reverseNumber(num, 0);
+    printf("Reverse of %d is %d.\n", num, reversed);
+    return 0;
+}
+
+Output:
+Enter a positive integer: 123456
+Reverse of 123456 is 654321.
+
